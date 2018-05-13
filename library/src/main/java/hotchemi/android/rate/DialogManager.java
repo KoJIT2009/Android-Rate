@@ -19,7 +19,14 @@ final class DialogManager {
     }
 
     static Dialog create(final Context context, final DialogOptions options) {
-        AlertDialog.Builder builder = getDialogBuilder(context);
+        AlertDialog.Builder builder;
+
+        if (options.isThemeId()) {
+            builder = getDialogBuilder(context, options.getThemeId());
+        } else {
+            builder = getDialogBuilder(context);
+        }
+
         builder.setMessage(options.getMessageText(context));
 
         if (options.shouldShowTitle()) builder.setTitle(options.getTitleText(context));

@@ -42,6 +42,8 @@ final class DialogOptions {
 
     private Reference<OnClickButtonListener> listener;
 
+    private int themeId = -1;
+
     public boolean shouldShowNeutralButton() {
         return showNeutralButton;
     }
@@ -191,5 +193,17 @@ final class DialogOptions {
 
     public void setNegativeText(String negativeText) {
         this.negativeText = negativeText;
+    }
+
+    public void setThemeId(int themeId) {
+        this.themeId = themeId;
+    }
+
+    public Boolean isThemeId() {
+        return (this.themeId >= 0);
+    }
+
+    public int getThemeId() {
+        return this.themeId;
     }
 }

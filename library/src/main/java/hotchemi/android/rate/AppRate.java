@@ -173,6 +173,11 @@ public final class AppRate {
         return this;
     }
 
+    public AppRate setThemeResId(int themeResId) {
+        options.setThemeId(themeResId);
+        return this;
+    }
+
     public void monitor() {
         if (isFirstLaunch(context)) {
             setInstallDate(context);

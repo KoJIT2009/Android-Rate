@@ -19,17 +19,21 @@ final class Utils {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
 
+    /**
+     * @deprecated
+     * @return
+     */
     static int getDialogTheme() {
         return isLollipopOrHigh() ? R.style.CustomLollipopDialogStyle : 0;
     }
 
     @SuppressLint("NewApi")
     static AlertDialog.Builder getDialogBuilder(Context context) {
-        if (underHoneyComb()) {
-            return new AlertDialog.Builder(context);
-        } else {
-            return new AlertDialog.Builder(context, getDialogTheme());
-        }
+        return new AlertDialog.Builder(context);
     }
 
+    @SuppressLint("NewApi")
+    static AlertDialog.Builder getDialogBuilder(Context context, int themeResId) {
+        return new AlertDialog.Builder(context, themeResId);
+    }
 }
