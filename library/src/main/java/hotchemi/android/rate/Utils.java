@@ -1,9 +1,10 @@
 package hotchemi.android.rate;
 
+
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
+import android.support.v7.app.AlertDialog;
 
 final class Utils {
 
@@ -14,12 +15,12 @@ final class Utils {
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB;
     }
 
-    static boolean isLollipop() {
-        return Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP || Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP_MR1;
+    static boolean isLollipopOrHigh() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
 
     static int getDialogTheme() {
-        return isLollipop() ? R.style.CustomLollipopDialogStyle : 0;
+        return isLollipopOrHigh() ? R.style.CustomLollipopDialogStyle : 0;
     }
 
     @SuppressLint("NewApi")

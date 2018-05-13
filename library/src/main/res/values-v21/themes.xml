@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="CustomLollipopDialogStyle" parent="android:Theme.Material.Light.Dialog.Alert">
+    <style name="CustomLollipopDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:buttonBarButtonStyle">@style/CustomButtonBarButtonStyle</item>
         <item name="android:buttonBarStyle">@style/CustomButtonBarStyle</item>
     </style>
